@@ -563,7 +563,13 @@ const INTENT_ANALYZER = {
       confidence_boosters: ['performance', 'smooth', '60fps', 'optimized'],
       techniques: ['transform properties', 'will-change', 'force3D', 'efficient selectors'],
       best_practices: ['Use transform over layout properties', 'Add will-change CSS', 'Cleanup animations properly']
-    }
+    },
+    smooth_scrolling: {
+      keywords: ['smooth scroll', 'lenis', 'buttery', 'smoothness', 'inertia scroll', 'momentum'],
+      confidence_boosters: ['feels janky', 'smooth out scrolling', 'luxury feel'],
+      techniques: ['Lenis', 'gsap.ticker', 'ScrollTrigger.update'],
+      best_practices: ['Sync with gsap.ticker', 'Call lenis.destroy() on unmount', 'Set lagSmoothing(0)']
+    },
   },
 
   analyze: function(request: string) {
@@ -1387,7 +1393,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
               description: 'Specific plugins needed',
               items: {
                 type: 'string',
-                enum: ['ScrollTrigger', 'SplitText', 'DrawSVGPlugin', 'MorphSVGPlugin', 'MotionPathPlugin', 'Draggable', 'InertiaPlugin', 'Flip', 'Observer', 'CustomEase', 'GSDevTools']
+                enum: ['ScrollTrigger', 'SplitText', 'DrawSVGPlugin', 'MorphSVGPlugin', 'MotionPathPlugin', 'Draggable', 'InertiaPlugin', 'Flip', 'Observer', 'CustomEase', 'GSDevTools', 'Lenis']
               }
             },
             performance_level: {
@@ -1690,12 +1696,12 @@ Just describe what you want in natural language and I'll generate production-rea
         const performance_level = args?.performance_level as string || 'optimized';
         
         let result = `# 🚀 Complete GSAP Setup - ${framework.toUpperCase()}\n\n`;
-        
+        const needsLenis = plugins.includes('Lenis');
         result += `## 📦 Installation\n\n`;
         if (framework === 'react' || framework === 'nextjs') {
-          result += `\`\`\`bash\nnpm install gsap @gsap/react\n\`\`\`\n\n`;
+          result += `\`\`\`bash\nnpm install gsap @gsap/react ${needsLenis ? 'lenis' : ''}\n\`\`\`\n\n`;
         } else {
-          result += `\`\`\`bash\nnpm install gsap\n\`\`\`\n\n`;
+          result += `\`\`\`bash\nnpm install gsap ${needsLenis ? 'lenis' : ''}\n\`\`\`\n\n`;
         }
         
         result += `## ⚡ Complete Setup with All Plugins\n\n`;
