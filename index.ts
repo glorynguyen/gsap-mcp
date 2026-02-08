@@ -1321,8 +1321,13 @@ document.querySelectorAll(".hover-element").forEach(element => {
 
 const server = new Server(
   {
-    name: 'ultimate-gsap-mcp-server',
-    version: '2.0.0',
+    name: 'gsap-mcp',
+    version: '1.1.0',
+  },
+  {
+    capabilities: {
+      tools: {},
+    },
   }
 );
 
