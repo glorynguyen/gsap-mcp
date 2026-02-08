@@ -12,6 +12,7 @@ It transforms natural language animation requests into production-ready, 60fps-o
 - **🔧 Performance Optimization**: Automatically refactors laggy animations into high-performance 60fps sequences.
 - **🛠️ Expert Debugging**: Analyzes code snippets for layout thrashing, missing plugin registrations, or logic errors.
 - **🎁 All Plugins Included**: Knowledge base updated for the GSAP era where **SplitText, MorphSVG, and DrawSVG are now free.**
+- **🧈 Lenis Smooth Scrolling**: Built-in support for Lenis integration with ScrollTrigger, including setup, React hooks, and best practices.
 
 ## 🛠 Tools Included
 
@@ -52,6 +53,19 @@ Add the following entry to the `mcpServers` section:
 
 ### 3. Restart Claude
 Restart the Claude Desktop application, and you will see a ⚡ icon indicating the GSAP Master tools are ready to use.
+
+### Continue.dev (VS Code Extension)
+
+Add the following to your `~/.continue/config.yaml`:
+
+```yaml
+mcpServers:
+  - name: gsap-mcp
+    command: npx
+    args:
+      - "-y"
+      - "@vinhnguyen/gsap-mcp"
+```
 
 ## 📖 Usage Examples
 
