@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/glorynguyen/gsap-mcp/compare/v1.1.0...v1.1.1) (2026-02-08)
+
+
+### Bug Fixes
+
+* **npm:** add repository URL to package.json ([2d3c1f9](https://github.com/glorynguyen/gsap-mcp/commit/2d3c1f933eb5ebc4f72b2cfae2d001c19e657146))
+
 # [1.1.0](https://github.com/glorynguyen/gsap-mcp/compare/v1.0.0...v1.1.0) (2026-02-08)
 
 
