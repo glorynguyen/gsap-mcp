@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/glorynguyen/gsap-mcp/compare/v1.1.1...v1.1.2) (2026-02-08)
+
+
+### Bug Fixes
+
+* **readme:** add Lenis and Continue.dev documentation ([eaa97b0](https://github.com/glorynguyen/gsap-mcp/commit/eaa97b0a97bf52ebd422cd93056da50f528279ab))
+
 ## [1.1.1](https://github.com/glorynguyen/gsap-mcp/compare/v1.1.0...v1.1.1) (2026-02-08)
 
 
