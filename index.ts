@@ -470,7 +470,15 @@ tl.to(".star", { morphSVG: ".circle", duration: 1 })
         progress_ring: 'drawSVG: "0% 75%", rotation: -90, transformOrigin: "center"',
         bar_chart: 'scaleY: data.value, transformOrigin: "bottom", stagger: 0.1'
       }
-    }
+    },
+    'Smooth Scrolling': {
+      description: 'Integration with Lenis for buttery-smooth scrolling that stays perfectly synced with ScrollTrigger.',
+      examples: {
+        basic_setup: 'const lenis = new Lenis(); lenis.on("scroll", ScrollTrigger.update); gsap.ticker.add((time) => lenis.raf(time * 1000)); gsap.ticker.lagSmoothing(0);',
+        react_usage: 'useGSAP(() => { const lenis = new Lenis(); lenis.on("scroll", ScrollTrigger.update); gsap.ticker.add((t) => lenis.raf(t * 1000)); return () => lenis.destroy(); });',
+        scroll_to: 'lenis.scrollTo("#target-id", { offset: -100, duration: 1.5 });'
+      }
+    },
   },
 
   // Performance monitoring utilities
